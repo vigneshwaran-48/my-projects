@@ -1,0 +1,12 @@
+{
+    "items": [
+        {
+            "url": "https://test.com",
+            "title": "Test"
+        },
+        {
+            "url": "https://mail.zoho.com",
+            "title": "Zoho Mail"
+        }
+    ]
+}
