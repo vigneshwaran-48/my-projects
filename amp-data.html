@@ -1,0 +1,337 @@
+<!doctype html>
+<html amp4email data-css-strict>
+  <head>
+    <meta charSet="utf-8" content="width=device-width"/>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src="https://cdn.ampproject.org/v0/amp-form-0.1.js" custom-element="amp-form"></script>
+    
+    
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <style type="text/css" amp-custom>
+            .email-content{
+                max-width: 600px ;
+                width: 100% ;
+            }
+            .EmailFooter-text--undecorated a {
+                color: #6d6e6f ;
+                text-decoration: none ;
+            }
+            
+.ConversationEmail-replyText--narrowWidth {
+    display: none;
+}
+
+
+@media only screen and (max-width: 380px) {
+    .EmailCommentStory-bigLikeButton {
+        width: 60%;
+    }
+}
+@media only screen and (min-width: 381px) {
+    .EmailCommentStory-bigLikeButton {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    .ConversationEmail-replyText--fullWidth {
+        display: none;
+    }
+    .ConversationEmail-replyText--narrowWidth {
+        display: inline-block;
+    }
+}
+            
+        
+        .AmpEmailBigLikeButton.clicked {
+        padding: 0px;
+        border: 1px solid #4573d2;
+        border-radius: 6px;
+        background-color: #dbe0fd;
+    }
+        .AmpEmailBigLikeButton.clicked .AmpEmailBigLikeButton-icon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/23b42ade8d92b0d105ab5b2b93632e4f426d0707/ThumbsUpLineIcon_2x_teal.png) no-repeat 8px;
+        height: 28px;
+        width: 28px;
+        background-size: 12px;
+        display: inherit;
+        vertical-align: middle;
+        filter: brightness(0) saturate(100%) invert(42%) sepia(19%) saturate(2487%) hue-rotate(186deg) brightness(96%) contrast(85%);
+    }
+        .AmpEmailBigLikeButton.clicked .AmpEmailBigLikeButton-text {
+        display: inherit;
+        vertical-align: middle;
+        margin: 0px 0px 0px -4px;
+        padding: 0px 8px 0px 0px;
+        color: #4573d2;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+        @media (hover: hover) { .AmpEmailBigLikeButton.clicked:hover {
+        background-color: #e7e9fc;
+        border-color: #4464bb;
+        cursor: pointer;
+    }
+            .AmpEmailBigLikeButton.clicked:hover .AmpEmailBigLikeButton-icon {
+        filter: brightness(0) saturate(100%) invert(37%) sepia(18%) saturate(2411%) hue-rotate(189deg) brightness(96%) contrast(86%);
+    }
+            .AmpEmailBigLikeButton.clicked:hover .AmpEmailBigLikeButton-text {
+        color: #4464bb;
+    } }
+
+
+        .AmpEmailBigLikeButton.unclicked {
+        padding: 0px;
+        border: 1px solid #cfcbcb;
+        border-radius: 6px;
+        background-color: transparent;
+    }
+        .AmpEmailBigLikeButton.unclicked .AmpEmailBigLikeButton-icon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/b010476f8ce0217105f0b342dc87d20e15c097a3/ThumbsUpLineIcon_2x_darkGray1.png) no-repeat 8px;
+        height: 28px;
+        width: 28px;
+        background-size: 12px;
+        display: inherit;
+        vertical-align: middle;
+        filter: brightness(0) saturate(100%) invert(43%) sepia(3%) saturate(177%) hue-rotate(169deg) brightness(97%) contrast(89%);
+    }
+        .AmpEmailBigLikeButton.unclicked .AmpEmailBigLikeButton-text {
+        display: inherit;
+        vertical-align: middle;
+        margin: 0px 0px 0px -4px;
+        padding: 0px 8px 0px 0px;
+        color: #6d6e6f;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+        @media (hover: hover) { .AmpEmailBigLikeButton.unclicked:hover {
+        background-color: rgba(55, 23, 23, 0.03);
+        cursor: pointer;
+    }
+            .AmpEmailBigLikeButton.unclicked:hover .AmpEmailBigLikeButton-icon {
+        filter: brightness(0) saturate(100%) invert(8%) sepia(8%) saturate(633%) hue-rotate(182deg) brightness(90%) contrast(88%);
+    }
+            .AmpEmailBigLikeButton.unclicked:hover .AmpEmailBigLikeButton-text {
+        color: #1e1f21;
+    } }
+
+        .AmpEmailBigLikeButton .AmpEmailBigLikeButton-text.hidden {
+        display: none;
+    }
+
+        .AmpEmailBigLikeButton-disabled {
+        padding: 0px;
+        border: 1px solid #b0acac;
+        border-radius: 6px;
+        background-color: transparent;
+    }
+        .AmpEmailBigLikeButton-disabledIcon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/eb03efcc31e4c1d8d2043f310c8a0c1eb7c2f2ba/ThumbsUpLineIcon_2x_disabled.png) 6px no-repeat;
+        height: 28px;
+        width: 28px;
+        background-size: 12px;
+        display: inherit;
+        vertical-align: middle;
+    }
+
+        .hidden {
+        display: none;
+    }
+    
+        
+        .AmpEmailMiniLikeButton.clicked {
+        padding: 0px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background-color: #dbe0fd;
+    }
+        .AmpEmailMiniLikeButton.clicked .AmpEmailMiniLikeButton-icon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/bda4bfdad3655ad617a0570ae5e139bfd9890ca5/ThumbsUpLineIcon_2x_16x16_blue.png) 6px no-repeat;
+        height: 28px;
+        width: 28px;
+        background-size: 16px;
+        display: inherit;
+        vertical-align: middle;
+        filter: brightness(0) saturate(100%) invert(42%) sepia(19%) saturate(2487%) hue-rotate(186deg) brightness(96%) contrast(85%);
+    }
+        .AmpEmailMiniLikeButton.clicked .AmpEmailMiniLikeButton-text {
+        display: inherit;
+        vertical-align: middle;
+        margin: 0px -2px 0px 6px;
+        color: #4573d2;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+        @media (hover: hover) { .AmpEmailMiniLikeButton.clicked:hover {
+        background-color: #e7e9fc;
+        cursor: pointer;
+    }
+            .AmpEmailMiniLikeButton.clicked:hover .AmpEmailMiniLikeButton-icon {
+        filter: brightness(0) saturate(100%) invert(37%) sepia(18%) saturate(2411%) hue-rotate(189deg) brightness(96%) contrast(86%);
+    }
+            .AmpEmailMiniLikeButton.clicked:hover .AmpEmailMiniLikeButton-text {
+        color: #4464bb;
+    } }
+
+        .AmpEmailMiniLikeButton.unclicked {
+        padding: 0px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background-color: transparent;
+    }
+        .AmpEmailMiniLikeButton.unclicked .AmpEmailMiniLikeButton-icon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/d498cbe895c2a9581dd7d98833f0b8e820d8bf2b/ThumbsUpLineIcon_2x_16x16_darkGray1.png) 6px no-repeat;
+        height: 28px;
+        width: 28px;
+        background-size: 16px;
+        display: inherit;
+        vertical-align: middle;
+        filter: brightness(0) saturate(100%) invert(43%) sepia(3%) saturate(177%) hue-rotate(169deg) brightness(97%) contrast(89%);
+    }
+        .AmpEmailMiniLikeButton.unclicked .AmpEmailMiniLikeButton-text {
+        display: inherit;
+        vertical-align: middle;
+        color: #6d6e6f;
+        font-weight: 500;
+        font-size: 12px;
+        margin: 0px -2px 0px 6px;
+    }
+
+        @media (hover: hover) { .AmpEmailMiniLikeButton.unclicked:hover {
+        background-color: rgba(55, 23, 23, 0.03);
+        cursor: pointer;
+    }
+            .AmpEmailMiniLikeButton.unclicked:hover .AmpEmailMiniLikeButton-icon {
+        filter: brightness(0) saturate(100%) invert(8%) sepia(8%) saturate(633%) hue-rotate(182deg) brightness(90%) contrast(88%);
+    }
+            .AmpEmailMiniLikeButton.unclicked:hover .AmpEmailMiniLikeButton-text {
+        color: #1e1f21;
+    } }
+
+        .AmpEmailMiniLikeButton .AmpEmailMiniLikeButton-text.hidden {
+        display: none;
+    }
+
+        .AmpEmailMiniLikeButton-disabled {
+        padding: 0px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background-color: transparent;
+    }
+        .AmpEmailMiniLikeButton-disabledIcon {
+        background: url(https://asana-static.s3.amazonaws.com/obj/843c9c1c38018a5695eb30f15a1e9a01c3aadb40/ThumbsUpIconDisabled_2x_16x16.png) 6px no-repeat;
+        height: 28px;
+        width: 28px;
+        background-size: 16px;
+        display: inherit;
+        vertical-align: middle;
+    }
+
+        .hidden {
+        display: none;
+    }
+    
+        
+        .AmpEmailCompleteButton.clicked {
+        padding: 0px;
+        border: 1px solid #8dc2ac;
+        border-radius: 6px;
+        background-color: #e6f8f1;
+    }
+        .AmpEmailCompleteButton.clicked .AmpEmailCompleteButton-icon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/48f8edf41acee09526907d0ba886bd3f7a610386/CheckIcon.png) no-repeat 8px;
+        height: 28px;
+        width: 28px;
+        background-size: 12px;
+        display: inherit;
+        vertical-align: middle;
+        filter: brightness(0) saturate(100%) invert(57%) sepia(12%) saturate(1242%) hue-rotate(103deg) brightness(97%) contrast(90%);
+    }
+        .AmpEmailCompleteButton.clicked .AmpEmailCompleteButton-text {
+        display: inherit;
+        vertical-align: middle;
+        margin: 0px 0px 0px -4px;
+        padding: 0px 8px 0px 0px;
+        color: #0d7f56;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+        @media (hover: hover) { .AmpEmailCompleteButton.clicked:hover {
+        background-color: #e0f4ec;
+        border-color: #58a182;
+        cursor: pointer;
+    }
+            .AmpEmailCompleteButton.clicked:hover .AmpEmailCompleteButton-icon {
+        filter: brightness(0) saturate(100%) invert(47%) sepia(17%) saturate(1248%) hue-rotate(104deg) brightness(96%) contrast(90%);
+    }
+            .AmpEmailCompleteButton.clicked:hover .AmpEmailCompleteButton-text {
+        color: #12714d;
+    } }
+
+        .AmpEmailCompleteButton.unclicked {
+        padding: 0px;
+        border: 1px solid #cfcbcb;
+        border-radius: 6px;
+        background-color: transparent;
+    }
+        .AmpEmailCompleteButton.unclicked .AmpEmailCompleteButton-icon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/48f8edf41acee09526907d0ba886bd3f7a610386/CheckIcon.png) no-repeat 8px;
+        height: 28px;
+        width: 28px;
+        background-size: 12px;
+        display: inherit;
+        vertical-align: middle;
+        filter: brightness(0) saturate(100%) invert(49%) sepia(6%) saturate(87%) hue-rotate(169deg) brightness(85%) contrast(83%);
+    }
+        .AmpEmailCompleteButton.unclicked .AmpEmailCompleteButton-text {
+        display: inherit;
+        vertical-align: middle;
+        margin: 0px 0px 0px -4px;
+        padding: 0px 8px 0px 0px;
+        color: #6d6e6f;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+        @media (hover: hover) { .AmpEmailCompleteButton.unclicked:hover {
+        background-color: #e0f4ec;
+        border-color: #58a182;
+        cursor: pointer;
+    }
+            .AmpEmailCompleteButton.unclicked:hover .AmpEmailCompleteButton-icon {
+        filter: brightness(0) saturate(100%) invert(47%) sepia(17%) saturate(1248%) hue-rotate(104deg) brightness(96%) contrast(90%);
+    }
+            .AmpEmailCompleteButton.unclicked:hover .AmpEmailCompleteButton-text {
+        color: #12714d;
+    } }
+
+        .AmpEmailCompleteButton .AmpEmailCompleteButton-text.hidden {
+        display: none;
+    }
+
+        .AmpEmailCompleteButton-disabled {
+        padding: 0px;
+        border: 1px solid #afabac;
+        border-radius: 6px;
+        background-color: transparent;
+    }
+        .AmpEmailCompleteButton-disabledIcon {
+        background: url(https://d3ki9tyy5l5ruj.cloudfront.net/obj/48f8edf41acee09526907d0ba886bd3f7a610386/CheckIcon.png) no-repeat 8px;
+        height: 28px;
+        width: 28px;
+        background-size: 12px;
+        display: inherit;
+        vertical-align: middle;
+        filter: brightness(0) saturate(100%) invert(74%) sepia(7%) saturate(89%) hue-rotate(294deg) brightness(94%) contrast(85%);
+    }
+
+        .hidden {
+        display: none;
+    }
+    
+    
+        </style></head><body style="padding:0 8px"><table cellPadding="0" cellSpacing="0" style="border-collapse:separate;border-spacing:0;table-layout:fixed;width:100%"><tr><td style="font-size:0;line-height:1px;height:1px"><amp-img src="https://app.asana.com/-/open?se=%7B%22email_creation_time%22%3A1687503696223%2C%22app_name%22%3A%22email%22%2C%22non_user_action_event%22%3Atrue%2C%22name%22%3A%22EmailOpened%22%2C%22action%22%3A%22EmailOpened%22%2C%22sub_action%22%3A%22ConversationEmail%22%2C%22location%22%3A%22EmailNotificationsBackend%22%2C%22luna2%22%3Atrue%2C%22conversation%22%3A1204888139697704%2C%22domain%22%3A1204888398271117%2C%22domain_user%22%3A1204888398271127%2C%22notifications%22%3A%5B1204888638868894%5D%2C%22user%22%3A1204888473896947%2C%22is_amp_email%22%3Atrue%2C%22stories%22%3A%5B1204888139697705%5D%2C%22email_uuid%22%3A%221687503695859-e83afb74-1685-409d-bfd2-bebb6992f0da%22%7D&amp;hash=8cd2f6bb915c7d15516c8f8b6c9810b2c8bbf92b1d1ae475cac82a563f1893a3" alt height="1" width="1"></amp-img><span style="display:none"><span>vignesh_waran@bizdemo.net sent you a message. You&#x27;re receiving this email because you are a collaborator on this message. </span> </span></td></tr><tr><td style="text-align:center"><table class="email-content" style="border-collapse:separate;border-spacing:0;margin-bottom:32px;margin-left:auto;margin-right:auto;margin-top:8px;table-layout:fixed;text-align:left;width:100%"><tr><td><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="background-color:#f1bd6c;border-radius:16px;line-height:16px;min-width:32px;height:32px;width:32px;text-align:center;vertical-align:middle"><span style="font-size:11px;font-weight:400;line-height:16px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">vi</span></td></tr></tbody></table></td><td style="max-width:16px;min-width:16px;width:16px"> </td><td><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td><a href="https://app.asana.com/app/asana/-/log_view?se=%7B%22name%22%3A%22AsanaLoaded%22%2C%22action%22%3A%22AsanaLoaded%22%2C%22sub_action%22%3A%22Conversation%22%2C%22location%22%3A%22ConversationNotificationEmail%22%2C%22sub_location%22%3A%22EmailHeader%22%2C%22luna2%22%3Atrue%2C%22is_status_update%22%3Afalse%2C%22conversation%22%3A1204888139697704%2C%22domain%22%3A1204888398271117%2C%22domain_user%22%3A1204888398271127%2C%22notifications%22%3A%5B1204888638868894%5D%2C%22user%22%3A1204888473896947%2C%22from_amp_email%22%3Atrue%2C%22stories%22%3A%5B1204888139697705%5D%2C%22non_user_action_event%22%3Afalse%2C%22email_uuid%22%3A%221687503695859-e83afb74-1685-409d-bfd2-bebb6992f0da%22%2C%22app_name%22%3A%22email%22%7D&amp;dest=https%3A%2F%2Fapp.asana.com%2F0%2F0%2F1204888139697704&amp;hash=e3641868dcddfe406b9c6d49e705cdc1493c62a3f2263ffbed15b56bd421208c" target="_blank" style="text-decoration:none"><span style="font-size:20px;font-weight:400;line-height:26px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">vignesh_waran@bizdemo.net sent you a message</span></a></td></tr><tr><td><a href="https://app.asana.com/app/asana/-/log_view?se=%7B%22name%22%3A%22AsanaLoaded%22%2C%22action%22%3A%22AsanaLoaded%22%2C%22sub_action%22%3A%22Conversation%22%2C%22location%22%3A%22ConversationNotificationEmail%22%2C%22sub_location%22%3A%22EmailHeader%22%2C%22luna2%22%3Atrue%2C%22is_status_update%22%3Afalse%2C%22conversation%22%3A1204888139697704%2C%22domain%22%3A1204888398271117%2C%22domain_user%22%3A1204888398271127%2C%22notifications%22%3A%5B1204888638868894%5D%2C%22user%22%3A1204888473896947%2C%22from_amp_email%22%3Atrue%2C%22stories%22%3A%5B1204888139697705%5D%2C%22non_user_action_event%22%3Afalse%2C%22email_uuid%22%3A%221687503695859-e83afb74-1685-409d-bfd2-bebb6992f0da%22%2C%22app_name%22%3A%22email%22%7D&amp;dest=https%3A%2F%2Fapp.asana.com%2F0%2F0%2F1204888139697704&amp;hash=e3641868dcddfe406b9c6d49e705cdc1493c62a3f2263ffbed15b56bd421208c" target="_blank" style="text-decoration:none"><span style="font-size:13px;font-weight:400;line-height:20px;color:#3f6ac4;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">View in Asana</span></a></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:16px;max-width:0;min-width:0;height:16px;width:0;font-size:16px"> </td></tr><tr><td style="background-color:#edeae9;height:1px;width:100%"></td></tr></tbody></table></td></tr></tbody></table><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:16px;max-width:0;min-width:0;height:16px;width:0;font-size:16px"> </td></tr><tr><td><a href="https://app.asana.com/app/asana/-/log_view?se=%7B%22name%22%3A%22AsanaLoaded%22%2C%22action%22%3A%22AsanaLoaded%22%2C%22sub_action%22%3A%22Conversation%22%2C%22location%22%3A%22ConversationNotificationEmail%22%2C%22sub_location%22%3A%22ConversationTitle%22%2C%22luna2%22%3Atrue%2C%22is_status_update%22%3Afalse%2C%22conversation%22%3A1204888139697704%2C%22domain%22%3A1204888398271117%2C%22domain_user%22%3A1204888398271127%2C%22notifications%22%3A%5B1204888638868894%5D%2C%22user%22%3A1204888473896947%2C%22from_amp_email%22%3Atrue%2C%22stories%22%3A%5B1204888139697705%5D%2C%22non_user_action_event%22%3Afalse%2C%22email_uuid%22%3A%221687503695859-e83afb74-1685-409d-bfd2-bebb6992f0da%22%2C%22app_name%22%3A%22email%22%7D&amp;dest=https%3A%2F%2Fapp.asana.com%2F0%2F0%2F1204888139697704&amp;hash=c1e23945481e668ba54693b58faa3c3e3a9fce77737189d9ec13c29bd1772be5" target="_blank" style="text-decoration:none"><span style="font-size:20px;font-weight:500;line-height:26px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">hi</span></a></td></tr><tr><td style="line-height:16px;max-width:0;min-width:0;height:16px;width:0;font-size:16px"> </td></tr><tr><td><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:20px"><div style="display:inline-block;height:9px;width:9px;min-width:9px;border-radius:3px;background-color:#9ee7e3"></div></td><td style="max-width:8px;min-width:8px;width:8px"> </td><td><a href="https://app.asana.com/app/asana/-/log_view?se=%7B%22name%22%3A%22AsanaLoaded%22%2C%22action%22%3A%22AsanaLoaded%22%2C%22sub_action%22%3A%22Project%22%2C%22location%22%3A%22ConversationNotificationEmail%22%2C%22sub_location%22%3A%22ProjectName%22%2C%22luna2%22%3Atrue%2C%22conversation%22%3A1204888139697704%2C%22domain%22%3A1204888398271117%2C%22domain_user%22%3A1204888398271127%2C%22notifications%22%3A%5B1204888638868894%5D%2C%22user%22%3A1204888473896947%2C%22from_amp_email%22%3Atrue%2C%22stories%22%3A%5B1204888139697705%5D%2C%22non_user_action_event%22%3Afalse%2C%22email_uuid%22%3A%221687503695859-e83afb74-1685-409d-bfd2-bebb6992f0da%22%2C%22app_name%22%3A%22email%22%7D&amp;dest=https%3A%2F%2Fapp.asana.com%2F0%2F1204887767933723%2F1204887767933723&amp;hash=5e77a118ebc13c80ec3b7f9734dff26f072375d491765943eaca71dc4bbd4f14" target="_blank" style="text-decoration:none"><span style="font-size:13px;font-weight:400;line-height:20px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">Email</span></a></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style="line-height:16px;max-width:0;min-width:0;height:16px;width:0;font-size:16px"> </td></tr></tbody></table><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;border-color:#edeae9;border-radius:4px;border-style:solid;border-width:1px"><tbody><tr><td style="width:100%"><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:24px;max-width:24px;min-width:24px;height:24px;width:24px;font-size:24px"> </td><td style="line-height:24px;max-width:auto;min-width:auto;height:24px;width:auto;font-size:24px"> </td><td style="line-height:24px;max-width:24px;min-width:24px;height:24px;width:24px;font-size:24px"> </td></tr><tr><td style="max-width:24px;min-width:24px;width:24px"> </td><td style="width:100%"><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="width:24px;vertical-align:top"><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="background-color:#f1bd6c;border-radius:12px;line-height:16px;min-width:24px;height:24px;width:24px;text-align:center;vertical-align:middle"><span style="font-size:11px;font-weight:400;line-height:16px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">vi</span></td></tr></tbody></table></td><td style="max-width:8px;min-width:8px;width:8px"> </td><td style="width:100%;vertical-align:top"><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="width:100%;vertical-align:top"><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="vertical-align:top"><span style="font-size:13px;font-weight:600;line-height:20px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">vignesh_waran@bizdemo.net</span><span style="display:inline-block;width:8px"> </span><a href="https://app.asana.com/app/asana/-/log_view?se=%7B%22name%22%3A%22AsanaLoaded%22%2C%22action%22%3A%22AsanaLoaded%22%2C%22sub_action%22%3A%22Conversation%22%2C%22location%22%3A%22ConversationNotificationEmail%22%2C%22luna2%22%3Atrue%2C%22conversation%22%3A1204888139697704%2C%22domain%22%3A1204888398271117%2C%22domain_user%22%3A1204888398271127%2C%22notifications%22%3A%5B1204888638868894%5D%2C%22user%22%3A1204888473896947%2C%22from_amp_email%22%3Atrue%2C%22stories%22%3A%5B1204888139697705%5D%2C%22non_user_action_event%22%3Afalse%2C%22email_uuid%22%3A%221687503695859-e83afb74-1685-409d-bfd2-bebb6992f0da%22%2C%22app_name%22%3A%22email%22%7D&amp;dest=https%3A%2F%2Fapp.asana.com%2F0%2F1204888398271131%2F1204888139697704&amp;hash=1aed5fdabcaedata-amp-bind-hidden4f2349c12ee4c2916e5cb04f124ed1ef7a355077a077de319a1f" target="_blank" style="text-decoration:none"><span style="font-size:13px;font-weight:400;line-height:20px;color:#6d6e6f;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">Jun 23, 2023 at 12:31pm</span></a><span style="display:inline-block;width:8px"> </span><span style="background-color:#4573d2;color:#ffffff;display:inline-block;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;width:fit-content;border-radius:100px;font-size:12px;font-weight:500;height:18px;line-height:18px;padding:0 8px"><span style="display:inline-block;padding-left:0;padding-right:0">New</span></span></td><td class="EmailCommentStory-bigLikeButton" style="text-align:right;vertical-align:top"><amp-list role="list" noloading height="32" items="." single-item="true" binding="always" src="https://app.asana.com/-/0/loadObject?domain=1204888398271117&amp;key=4c98cbb9b5838a1e83cf527ff56ee966&amp;actionable_email_client=AMP"><template type="amp-mustache"><form class="AmpEmailFormButton-form" method="post" action-xhr="https://app.asana.com/-/0/ampObjectAction?domain=1204888398271117&amp;key=d2a5c6d7f8fa5088059625fdb4b9251f&amp;actionable_email_client=AMP&amp;actionable_email_action=LIKE_STORY_ON_OBJECT&amp;story_id=1204888139697705" on="submit:AMP.setState({clickState_AmpEmailBigLikeButton_0:(clickState_AmpEmailBigLikeButton_0 == &#x27;initial&#x27; || clickState_AmpEmailBigLikeButton_0 == null) ? &#x27;secondary&#x27; : &#x27;initial&#x27;,showDisabledButton_AmpEmailBigLikeButton_0:false}),AmpEmailBigLikeButton_0.toggleClass(class=&#x27;clicked&#x27;),AmpEmailBigLikeButton_0.toggleClass(class=&#x27;unclicked&#x27;);submit-error:AMP.setState({showDisabledButton_AmpEmailBigLikeButton_0:true})" role="Button" tabindex="0"><button id="AmpEmailBigLikeButton_0" class="AmpEmailBigLikeButton {{#primaryObject.objectHeartedState.heartedByCurrentDu}}clicked{{/primaryObject.objectHeartedState.heartedByCurrentDu}}{{^primaryObject.objectHeartedState.heartedByCurrentDu}}unclicked{{/primaryObject.objectHeartedState.heartedByCurrentDu}}" data-amp-bind-hidden="showDisabledButton_AmpEmailBigLikeButton_0"><div class="AmpEmailBigLikeButton-icon"></div><p class="AmpEmailBigLikeButton-text" data-amp-bind-class="&#x27;AmpEmailBigLikeButton-text&#x27;" data-amp-bind-text="(clickState_AmpEmailBigLikeButton_0 == &#x27;initial&#x27; || clickState_AmpEmailBigLikeButton_0 == null) ? &#x27;{{primaryObject.objectHeartedState.initialState.text}}&#x27; : &#x27;{{primaryObject.objectHeartedState.secondaryState.text}}&#x27;"></p></button><button id="AmpEmailBigLikeButton_disabled_0" class="AmpEmailBigLikeButton-disabled" title="Error: object was deleted" disabled hidden data-amp-bind-hidden="showDisabledButton_AmpEmailBigLikeButton_0 != true"><div class="AmpEmailBigLikeButton-disabledIcon"></div></button><input name="dummy" hidden/></form></template></amp-list></td></tr></tbody></table></td></tr><tr><td style="line-height:4px;max-width:0;min-width:0;height:4px;width:0;font-size:4px"> </td></tr><tr><td style="width:100%;vertical-align:top"><span style="font-size:13px;font-weight:400;line-height:20px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif"><div>hi</div></span></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td><td style="max-width:24px;min-width:24px;width:24px"> </td></tr><tr><td style="line-height:24px;max-width:24px;min-width:24px;height:24px;width:24px;font-size:24px"> </td><td style="line-height:24px;max-width:auto;min-width:auto;height:24px;width:auto;font-size:24px"> </td><td style="line-height:24px;max-width:24px;min-width:24px;height:24px;width:24px;font-size:24px"> </td></tr></tbody></table></td></tr></tbody></table><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:16px;max-width:0;min-width:0;height:16px;width:0;font-size:16px"> </td></tr><tr><td style="white-space:nowrap"><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="background-color:#ffffff;border-radius:4px"><a href="https://app.asana.com/app/asana/-/log_view?se=%7B%22name%22%3A%22AsanaLoaded%22%2C%22action%22%3A%22AsanaLoaded%22%2C%22sub_action%22%3A%22Conversation%22%2C%22location%22%3A%22ConversationNotificationEmail%22%2C%22sub_location%22%3A%22ViewInAsanaButton%22%2C%22luna2%22%3Atrue%2C%22is_status_update%22%3Afalse%2C%22conversation%22%3A1204888139697704%2C%22domain%22%3A1204888398271117%2C%22domain_user%22%3A1204888398271127%2C%22notifications%22%3A%5B1204888638868894%5D%2C%22user%22%3A1204888473896947%2C%22from_amp_email%22%3Atrue%2C%22stories%22%3A%5B1204888139697705%5D%2C%22non_user_action_event%22%3Afalse%2C%22email_uuid%22%3A%221687503695859-e83afb74-1685-409d-bfd2-bebb6992f0da%22%2C%22app_name%22%3A%22email%22%7D&amp;dest=https%3A%2F%2Fapp.asana.com%2F0%2F0%2F1204888139697704&amp;hash=02fcd2537c977a4b6026167a89efc609b4f1ec30023aa170566f2dbf12c9ce15" target="_blank" style="text-decoration:none;border-radius:4px;padding:8px 16px;border:1px solid #cfcbcb;display:inline-block"><span style="font-size:13px;font-weight:600;line-height:20px;color:#6d6e6f;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">View in Asana</span></a></td></tr></tbody></table></td><td style="max-width:16px;min-width:16px;width:16px"> </td><td class="ConversationEmail-replyText--fullWidth"><span style="font-size:13px;font-weight:400;line-height:20px;color:#6d6e6f;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">Reply directly to this email to respond.</span></td></tr></tbody></table><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:8px;max-width:0;min-width:0;height:8px;width:0;font-size:8px"> </td></tr><tr><td class="ConversationEmail-replyText--narrowWidth"><span style="font-size:13px;font-weight:400;line-height:20px;color:#6d6e6f;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">Reply directly to this email to respond.</span></td></tr></tbody></table><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:24px;max-width:0;min-width:0;height:24px;width:0;font-size:24px"> </td></tr><tr><td><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="vertical-align:bottom"><span style="font-size:13px;font-weight:600;line-height:20px;color:#6d6e6f;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">Collaborators</span></td></tr><tr><td style="line-height:4px;max-width:0;min-width:0;height:4px;width:0;font-size:4px"> </td></tr><tr><td style="vertical-align:top"><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td><table cellPadding="0" cellSpacing="0" style="table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="background-color:#f1bd6c;border-radius:12px;line-height:16px;min-width:24px;height:24px;width:24px;text-align:center;vertical-align:middle"><span style="font-size:11px;font-weight:400;line-height:16px;color:#1e1f21;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">vi</span></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr><tr><td style="line-height:24px;max-width:0;min-width:0;height:24px;width:0;font-size:24px"> </td></tr></tbody></table></td></tr><tr><td><div style="background-color:#f9f8f8;margin-bottom:24px"><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="line-height:24px;max-width:24px;min-width:24px;height:24px;width:24px;font-size:24px"> </td><td style="line-height:24px;height:24px;font-size:24px"> </td><td style="line-height:24px;max-width:24px;min-width:24px;height:24px;width:24px;font-size:24px"> </td></tr><tr><td> </td><td><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><tr><td><span style="font-size:13px;font-weight:400;line-height:20px;color:#6d6e6f;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif"></span></td></tr></tr></tbody></table></td><td> </td></tr><tr><td style="line-height:24px;max-width:0;min-width:0;height:24px;width:0;font-size:24px"> </td></tr></tbody></table><table cellPadding="0" cellSpacing="0" style="width:100%;min-width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0"><tbody><tr><td style="max-width:24px;min-width:24px;width:24px"> </td><td style="vertical-align:middle"><amp-img alt="Logo of Asana" src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/1c7e0fd745ecc8caaed91c347c16a95bb29dd3ab/asana-logo.png" height="33.6" width="125"></amp-img></td><td style="max-width:16px;min-width:16px;width:16px"> </td><td style="width:100%;text-align:right;vertical-align:middle"><span class="EmailFooter-text--undecorated" style="font-size:13px;font-weight:400;line-height:20px;color:#6d6e6f;font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif">My workspace</span></td><td style="max-width:24px;min-width:24px;width:24px"> </td></tr><tr><td style="line-height:24px;max-width:0;min-width:0;height:24px;width:0;font-size:24px"> </td></tr></tbody></table></div></td></tr></table></td></tr></table></body></html>
